@@ -80,48 +80,48 @@
     <div id="tree-grid" class="tree-grid"></div>
   </section>
 
-  <script>
-    // Hardcoded tree data (images must exist in 'trees/' folder)
-    const allTrees = [
-      { name: "Maple", image: "trees/maple.jpg" },
-      { name: "Pine", image: "trees/pine.jpg" },
-      { name: "Juniper", image: "trees/juniper.jpg" },
-      { name: "Elm", image: "trees/elm.jpg" },
-      { name: "Oak", image: "trees/oak.jpg" },
-      { name: "Cherry", image: "trees/cherry.jpg" },
-      { name: "Cedar", image: "trees/cedar.jpg" },
-      { name: "Spruce", image: "trees/spruce.jpg" },
-      { name: "Willow", image: "trees/willow.jpg" }
-    ];
+ <script>
+const treeFiles = [
+  {
+    name: "Maple",
+    page: "trees/20250506MapleFormal132.html",
+    image: "trees/20250506MapleFormal132.jpg"
+  }
+  // Add more as needed
+];
 
-    // Shuffle and select 8
-    const shuffled = allTrees.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 8);
+const shuffled = treeFiles.sort(() => 0.5 - Math.random());
+const selected = shuffled.slice(0, 8);
 
-    const grid = document.getElementById('tree-grid');
+const grid = document.getElementById('tree-grid');
 
-    selected.forEach(tree => {
-      const card = document.createElement('div');
-      card.className = 'tree-card';
+selected.forEach(tree => {
+  const card = document.createElement('div');
+  card.className = 'tree-card';
 
-      const img = document.createElement('img');
-      img.src = tree.image;
-      img.alt = tree.name;
+  const link = document.createElement('a');
+  link.href = tree.page;
 
-      const name = document.createElement('p');
-      name.textContent = tree.name;
+  const img = document.createElement('img');
+  img.src = tree.image;
+  img.alt = tree.name;
 
-      card.appendChild(img);
-      card.appendChild(name);
-      grid.appendChild(card);
-    });
+  const name = document.createElement('p');
+  name.textContent = tree.name;
 
-    // Fill up with empty placeholders if needed
-    for (let i = selected.length; i < 8; i++) {
-      const placeholder = document.createElement('div');
-      placeholder.className = 'tree-card';
-      grid.appendChild(placeholder);
-    }
-  </script>
+  link.appendChild(img);
+  card.appendChild(link);
+  card.appendChild(name);
+  grid.appendChild(card);
+});
+
+// Fill empty slots
+for (let i = selected.length; i < 8; i++) {
+  const placeholder = document.createElement('div');
+  placeholder.className = 'tree-card';
+  grid.appendChild(placeholder);
+}
+</script>
+
 </body>
 </html>
