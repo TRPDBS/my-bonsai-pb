@@ -1,0 +1,53 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff8f0;
+  color: #333;
+}
+header {
+  background: #cc5200;
+  color: white;
+  padding: 1em;
+}
+nav a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+.hero {
+  background: #ffa64d;
+  padding: 2em;
+  text-align: center;
+}
+.btn {
+  background: #cc5200;
+  color: white;
+  padding: 0.7em 1.2em;
+  margin: 1em;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.btn-secondary {
+  background: #ffa64d;
+  color: #333;
+}
+.tree-profile {
+  display: flex;
+  padding: 2em;
+}
+.tree-photo {
+  width: 300px;
+  margin-right: 2em;
+}
+.tree-info {
+  flex: 1;
+}
+.qr-code {
+  margin-top: 1em;
+}
+footer {
+  background: #eee;
+  padding: 1em;
+  text-align: center;
+}
