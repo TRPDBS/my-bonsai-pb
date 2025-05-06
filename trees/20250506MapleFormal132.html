@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bonsai Tree Detail</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #1e3d2f;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .tree-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 1rem;
+      border-radius: 8px;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-grid div {
+      padding: 0.5rem;
+    }
+    .label {
+      font-weight: bold;
+      color: #2e5b44;
+    }
+    .story {
+      margin-top: 1.5rem;
+    }
+    .story h2 {
+      color: #2e5b44;
+      margin-bottom: 0.5rem;
+    }
+    .qr-section {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .qr-code {
+      width: 120px;
+      height: 120px;
+    }
+    .btn-back {
+      background-color: #2e5b44;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-back:hover {
+      background-color: #3a745a;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bonsai Tree Detail</h1>
+  </header>
+
+  <div class="container">
+    <img src="trees/20250506MapleFormal132.jpg" alt="Maple Bonsai" class="tree-image" />
+
+    <div class="info-grid">
+      <div><span class="label">Tree Name:</span> Maple</div>
+      <div><span class="label">Style:</span> Formal Upright</div>
+      <div><span class="label">Species:</span> Acer palmatum (Japanese Maple)</div>
+      <div><span class="label">Age:</span> 45 years</div>
+      <div><span class="label">Current Owner:</span> Hana Yamada</div>
+      <div><span class="label">Previous Owner:</span> Unknown (donated from Tokyo Garden Society)</div>
+      <div><span class="label">Origin:</span> Kyoto, Japan</div>
+      <div><span class="label">Height:</span> 42 cm</div>
+    </div>
+
+    <div class="story">
+      <h2>Story</h2>
+      <p>
+        This bonsai maple was cultivated from a cutting in 1980 by a master gardener in Kyoto. It was shaped in the
+        formal upright style over decades and featured in the National Bonsai Exhibition in 2015. Known for its vibrant autumn foliage, it has become a showcase specimen for traditional Japanese techniques.
+      </p>
+    </div>
+
+    <div class="qr-section">
+      <div>
+        <p><strong>Scan to view this page:</strong></p>
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://yourdomain.com/20250506MapleFormal132.html" alt="QR Code">
+      </div>
+      <a href="index.html" class="btn-back">← Back to Main Page</a>
+    </div>
+  </div>
+
+</body>
+</html>
