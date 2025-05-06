@@ -47,3 +47,81 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+    }
+    .tree-card img {
+      max-width: 100%;
+      max-height: 160px;
+      object-fit: contain;
+    }
+    .tree-card p {
+      margin: 10px 0 0;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #2e5b44;
+    }
+    section h2 {
+      text-align: center;
+      color: #2e5b44;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bonsai Tree Wiki</h1>
+  </header>
+
+  <div class="banner">
+    <h2>Browse Trees</h2>
+  </div>
+
+  <section>
+    <h2>Highlighted Trees</h2>
+    <div id="tree-grid" class="tree-grid"></div>
+  </section>
+
+  <script>
+    // Hardcoded tree data (images must exist in 'trees/' folder)
+    const allTrees = [
+      { name: "Maple", image: "trees/maple.jpg" },
+      { name: "Pine", image: "trees/pine.jpg" },
+      { name: "Juniper", image: "trees/juniper.jpg" },
+      { name: "Elm", image: "trees/elm.jpg" },
+      { name: "Oak", image: "trees/oak.jpg" },
+      { name: "Cherry", image: "trees/cherry.jpg" },
+      { name: "Cedar", image: "trees/cedar.jpg" },
+      { name: "Spruce", image: "trees/spruce.jpg" },
+      { name: "Willow", image: "trees/willow.jpg" }
+    ];
+
+    // Shuffle and select 8
+    const shuffled = allTrees.sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, 8);
+
+    const grid = document.getElementById('tree-grid');
+
+    selected.forEach(tree => {
+      const card = document.createElement('div');
+      card.className = 'tree-card';
+
+      const img = document.createElement('img');
+      img.src = tree.image;
+      img.alt = tree.name;
+
+      const name = document.createElement('p');
+      name.textContent = tree.name;
+
+      card.appendChild(img);
+      card.appendChild(name);
+      grid.appendChild(card);
+    });
+
+    // Fill up with empty placeholders if needed
+    for (let i = selected.length; i < 8; i++) {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'tree-card';
+      grid.appendChild(placeholder);
+    }
+  </script>
+</body>
+</html>
